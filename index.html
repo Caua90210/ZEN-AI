@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat com OpenAI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./script.js" defer></script>
+</head>
+<body class="bg-black">
+
+
+    <main class="pt-36">
+        <div class="px-96">
+
+            <div id="chat" class=" mx-auto rounded-lg shadow-lg overflow-hidden">
+    
+                <div id="chat-messages" class="px-4 py-6 space-y-4 overflow-y-auto max-h-80">
+    
+                </div>
+    
+                <div class="px-4 py-4 bg-gray-700 border-t border-gray-600">
+    
+                    <input id="user-input" type="text" placeholder="Digite sua mensagem..." class="w-full px-4 py-2 rounded-lg border focus:outline-none">
+    
+                    <button id="send-btn" class="block bg-black w-full px-4 py-2 mt-2 text-white rounded-lg focus:outline-none">
+                        Enviar
+                    </button>
+    
+                </div>
+            </div>
+        </div>
+    </main>
+    
+</body>
+</html>

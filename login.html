@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./src/input.css">
+    <link rel="stylesheet" href="./src/output.css">
+   <script src="./login.js" type="module" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Login</title>
+</head>
+<body class=" h-screen flex justify-center items-center">
+
+    <main class="flex items-center justify-center">
+        <form action="./index.html" class="text-white bg-gray-800 rounded-lg flex flex-col items-center justify-center p-2" id="form">
+            <div class="flex flex-col items-center p-10">
+            <h1 class="text-4xl">CHAT</h1>
+            <p class="text-1xl"></p>
+            <div class="flex flex-col gap-5 pt-10">
+
+            <div class="flex items-center">
+                <input type="text" class="p-2 w-80 text-black  rounded-lg text-2xl" id="email">
+                <i class='bx bx-envelope  p-2 text-2xl pr-4'></i>
+            </div>
+
+            <div class="flex items-center">
+                <input type="password" class="p-2 w-80 text-black  rounded-lg text-2xl" id="senha" >
+                <i class='bx bx-lock p-2 text-2xl pr-4' id="icone" ></i>
+            </div>
+
+        </div>
+        <button class="flex items-center justify-center py-2 w-80 h-16 rounded-lg bg-[#277EA4] mt-10 font-bold hover:bg-white hover:text-black transition ease-in-out" >LOGIN</button>
+        </div>
+        </form>
+    </main>
+    
+</body>
+</html>
