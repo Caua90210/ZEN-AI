@@ -5,43 +5,46 @@ const form = document.getElementById('form');
 form.addEventListener('submit', function(event) {
     event.preventDefault(); 
 
-    validarLogin();
+    login();
 });
 
-async function validarLogin(){
+async function login(){
     const email = document.getElementById('email').value;
     const senha = document.getElementById('senha').value;
 
-    console.log(email);
-
     if(email === '' || senha === ''){
-        alert('Preencha todos os campos');
+        alert('Preencha tudo');
         return false;
     }
 
     try{
-        const users = await fetch('https://back-login.vercel.app/usuarios');
+        const APIlogin = await fetch('https://back-login.vercel.app/usuarios');
 
-        const listUsers = await users.json();
+        const listarUsuarios = await APIlogin.json();
 
-        let validaUsuario = false;
+        let usuario = false;
 
-        listUsers.forEach((user)=>{
+        listarUsuarios.forEach((user)=>{
+
             if(email === user.email && senha === user.senha){
-                alert('Usuário encontrado com sucesso!');
+
                 localStorage.setItem("id", user.id);
-                localStorage.setItem("nome", user.email);
+
+                localStorage.setItem("email", user.email);
+
+
                 window.location.href = './index.html';
-                validaUsuario = true;
+                
+                usuario = true;
             }
         });
 
-        if(!validaUsuario){
-            alert('Usuário não encontrado.');
+        if(!usuario){
+            alert('N existe esse mano');
         }
 
     } catch(error){
-        alert('Erro ao acessar a API');
+        alert('API tá falhando ae');
         console.error(error);
     }
 }
