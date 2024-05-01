@@ -26,7 +26,7 @@ const consultarGemini = (question) => {
     .then(response => response.json())
     .then(data => {
         const respostaTextIa = data.candidates[0].content.parts[0].text;
-        appendMessage('AI', respostaTextIa); // Adicionando a resposta como mensagem
+        appendMessage('AI', respostaTextIa); 
     })
     .catch(error => console.error('Error: ', error ));
 }
@@ -47,13 +47,12 @@ const appendMessage = (sender, message) => {
     messageDiv.appendChild(messageContent);
     chatMessages.appendChild(messageDiv);
 
-    // Role automaticamente para baixo
     chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
 const sendBtn = document.getElementById('send-btn');
 sendBtn.addEventListener('click', () => {
     const question = document.getElementById('user-input').value;
-    appendMessage('user', question); // Adicionando a mensagem do usuário
+    appendMessage('user', question); 
     consultarGemini(question);
 });
